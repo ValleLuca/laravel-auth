@@ -7,9 +7,6 @@
     <title>Index</title>
 </head>
 <body>
-    
-    <h2>index</h2>
-    @dump($posts)
-
+    <h2>ciao</h2>
 </body>
 </html>
