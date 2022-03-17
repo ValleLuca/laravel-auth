@@ -18,7 +18,7 @@ class PostsTableSeeder extends Seeder
             $post = new Post();
             $post->title = $faker->words(5, true);
             $post->content = $faker->text();
-            $post->published = rand(0, 1);
+            /* $post->published = rand(0, 1); */
             $post->slung = Str::of($post->title)->slug("-");
             $post->save();
         }

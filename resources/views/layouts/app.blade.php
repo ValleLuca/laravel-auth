@@ -74,6 +74,8 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('center')
+            @yield('addpost')
         </main>
     </div>
 </body>

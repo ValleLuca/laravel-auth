@@ -16,7 +16,7 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
-        return view('admin.post.index', compact('posts'));
+        return view('admin.posts.index', compact('posts'));
     }
 
     /**
@@ -24,9 +24,9 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Post $post)
     {
-        //
+        return view('admin.posts.create');
     }
 
     /**
@@ -37,7 +37,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            "title"=> "required|string|max:80|unique:posts",
+            "content"=> "required|string|max:80|unique:posts",
+        ]);
+
+        $addpost = $request->all();
+
+        $newPosts = new Post();
+        $newPosts->fill($addpost);
+        $newPosts->save();
+
+        return redirect()->route('admin.post.show', $newPosts->id);
     }
 
     /**

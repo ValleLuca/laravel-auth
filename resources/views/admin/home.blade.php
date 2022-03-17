@@ -15,6 +15,7 @@
                     @endif
                     Benvenuto {{ Auth::user()->name }}
                     {{ __('You are logged in!') }}
+                    <a href="{{ route('admin.post.index') }}">iniziamo</a>
                 </div>
             </div>
         </div>
