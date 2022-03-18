@@ -76,6 +76,7 @@
             @yield('content')
             @yield('center')
             @yield('addpost')
+            @yield('show')
         </main>
     </div>
 </body>
